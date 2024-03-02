@@ -8,10 +8,13 @@ export default {
   theme: {
     extend: {},
     screens: {
-      'sm' : '320px',
+      'w' : "50px",
+      'sm' : '300px',
+      'ssm' : "400px",
       'md' : '640px',
       'lg' : '780px',
-      'xl' : '1180px' 
+      'xl' : '1025px', 
+      '2xl' : '1200px' 
     }
   },
   plugins: [],

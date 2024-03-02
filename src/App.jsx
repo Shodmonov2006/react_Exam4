@@ -1,71 +1,62 @@
 import React, { Suspense } from 'react'
-// import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-// import Layout from './Layout/Layout'
-// import Buy from './Pages/Buy/Buy'
-// import Blog from './Pages/Blog/Blog'
-// import About from './Pages/About/About'
-// import Contacts from './Pages/Contacts/Contacts'
-// import Nothing from './Pages/Nothing/Nothing'
 import './App.css'
-import { About, Career, Contacts, Layout, Main, News, Objects, Reviews, Services } from './Routes/Routes'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import Nothing from './Pages/Nothing/Nothing'
-import { useTranslation } from 'react-i18next'
+import { AboutProduct, Basket, Catalog, Layout, Login, Main, ManCatalog, Nothing, Stock, WomanCatalog } from './Routes/Routes'
+import Loader from './Routes/Loader/Loader'
 
-const router = createBrowserRouter ([
+const router =createBrowserRouter ([
   {
     path: "/",
-    element: <Suspense fallback={ <div>Loading . . .</div> }> <Layout/> </Suspense>,
+    element: <Suspense> <Layout/> </Suspense>,
     children: [
       {
         index:true,
-        element: <Suspense fallback={ <div>Loading . . .</div> }> <Main/> </Suspense>
+        element: <Suspense fallback={ <div className='flex justify-center items-center h-[100vh] bg-[white] rounded-[30px]'> <Loader/> </div> }> <Main/> </Suspense>
+      },
+      {
+        path: "catalogBeatStile",
+        element: <Suspense fallback={ <div className='flex justify-center items-center h-[100vh] bg-[white] rounded-[30px]'> <Loader/> </div> }> <Catalog/> </Suspense>
       },
 
       {
-        path: "services",
-        element: <Suspense fallback={ <div>Loading . . .</div> }> <Services/> </Suspense>
+        path: "womanCatalog",
+        element: <Suspense fallback={ <div className='flex justify-center items-center h-[100vh] bg-[white] rounded-[30px]'> <Loader/> </div> }> <WomanCatalog/> </Suspense>
       },
 
       {
-        path: "objects",
-        element: <Suspense fallback={ <div>Loading . . .</div> }> <Objects/> </Suspense>
+        path: "manCatalog",
+        element: <Suspense fallback={ <div className='flex justify-center items-center h-[100vh] bg-[white] rounded-[30px]'> <Loader/> </div> }> <ManCatalog/> </Suspense>
+      },
+       
+      {
+        path: "login",
+        element: <Suspense fallback={ <div className='flex justify-center items-center h-[100vh] bg-[white] rounded-[30px]'> <Loader/> </div> }> <Login/> </Suspense>
       },
 
       {
-        path: "career",
-        element: <Suspense fallback={ <div>Loading . . .</div> }> <Career/> </Suspense>
+        path: "basket",
+        element: <Suspense fallback={ <div className='flex justify-center items-center h-[100vh] bg-[white] rounded-[30px]'> <Loader/> </div> }> <Basket/> </Suspense>
       },
 
       {
-        path: "contacts",
-        element: <Suspense fallback={ <div>Loading . . .</div> }> <Contacts/> </Suspense>
+        path: "stock",
+        element: <Suspense fallback={ <div className='flex justify-center items-center h-[100vh] bg-[white] rounded-[30px]'> <Loader/> </div> }> <Stock/> </Suspense>
       },
+
       {
-        path: "news",
-        element: <Suspense fallback={ <div>Loading . . .</div> }> <News/> </Suspense>
+        path: "aboutProduct",
+        element: <Suspense fallback={ <div className='flex justify-center items-center h-[100vh] bg-[white] rounded-[30px]'> <Loader/> </div> }> <AboutProduct/> </Suspense>
       },
-      {
-        path: "reviews",
-        element: <Suspense fallback={ <div>Loading . . .</div> }> <Reviews/> </Suspense>
-      },
-      {
-        path: "about",
-        element: <Suspense fallback={ <div>Loading . . .</div> }> <About/> </Suspense>
-      },
+
       {
         path: "*",
-        element: <Nothing/>
+        element: <Suspense fallback={ <div className='flex justify-center items-center h-[100vh] bg-[white] rounded-[30px]'> <Loader/> </div> }> <Nothing/> </Suspense>
       }
     ]
   }
 ]) 
 
 const App = () => {
-  const { t, i18n } = useTranslation();
-  const changeLanguage = (language) => {
-    i18n.changeLanguage(language)
-  }
   return (
     <div>
       <RouterProvider router={router}/>

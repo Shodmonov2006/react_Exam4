@@ -3,44 +3,74 @@
   padding: 0;
 }
 
+
 .container{
   max-width: 1200px;
-  margin: 0 auto;
-}
-.bg{
-  background-image: url(./Pages/Buy/img/slider1.png);
-  background-size: cover;
-  background-repeat: no-repeat;
+  margin: auto;
 }
 
-.bgCrd{
-  background-image: url(./Pages/Buy/img/bgCrd.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 260px;
-}
-.bgImg{
-  background-image: url(./Pages/Buy/img/bgImg.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+
 .bg{
-  background-image: url(./Pages/Main/img/bg.png);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: linear-gradient(to right,#cb11ab 0,#481173 100%);
 }
-.bgCrd{
-  background-image: url(./Pages/Main/img/bgCrd.png);
-  background-repeat: no-repeat;
-  background-size: cover;
+
+
+.tooltipCurrency{
+  position: relative;
+  cursor:  pointer;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: sans-serif;
 }
-.bbg{
-  background-image: url(./Pages/Main/img/bg2.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+.text{
+  box-shadow: 0 0 10px rgb(107, 107, 107);
+  width: 300px;
+  border-radius: 10px;
+  white-space: nowrap;
+  position: absolute;
+  left: 0%;
+  top: 0;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  display: none;
 }
-.g{
-  background-image: url(./Pages/Objects/img/bg.png);
-  background-repeat: no-repeat;
-  background-size: cover;
+.tooltipCurrency:hover .text{
+  display: block;
+  margin-top: 50px;
+  z-index: 9;
+}
+
+
+/* .blockButton{
+  display: none;
+}
+.hoverCard:hover .blockButton{
+  display: block;
+} */
+.hoverCard:hover .boxShadow{
+  box-shadow: 0 0 10px rgb(185, 185, 185);
+  border-radius: 10px;
+  z-index: 0;
+}
+
+
+.bgMenuOpenModal{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 99;
+  background-color: rgba(13, 15, 24, 0.768);
+}
+
+
+.imgDropdown-content{
+  display: none;
+}
+.imgDropdown:hover .imgDropdown-content{
+  display: block;
+  position: absolute;
+  top: 305px;
+  left: 10.7%;
+  width: 411px;
+  z-index: 10;
 }
